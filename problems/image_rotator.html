@@ -6,14 +6,41 @@
 	<style type="text/css">
 		#rotator {
 			width: 450px;
-			height: 300px;
+			height: 355px;
 			border: 1px solid black;
-			background: #aaa;
+			background: #131313;
 			text-align: center;
+            position: relative;
+            display: block;
+            overflow:hidden;
 		}
+
+        #rotator h4 {
+            margin: 1em;
+        }
+
+
+        #rotator p {
+            padding: 0 5px;
+        }
+
+        #rotator div {
+            position: absolute;
+            opacity: 0;
+            transition: 1s opacity;
+        }
+
+        #rotator div.show {
+            opacity: 1;
+            position: static;
+            transition: 1s opacity;
+        }
+
+
 	</style>
+    <script type="text/javascript" src="../js/image_rotator.js"></script>
 </head>
-<body>
+<body onload="javascript:pageInit()">
 	<div id="headwrap">
 	<div class="head">
 		<div class="logo">Riot Games</div>
@@ -30,28 +57,29 @@
 		It would be really awesome if the slides animated between one another!
 	</p>
 
-	<hr />
 
-	<h4>Katarina</h4>
-	<p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
-	<img src="../img/kat_1.jpg" /><br/>
-
-	<h4>Red Card Katarina</h4>
-	<p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
-	<img src="../img/kat_2.jpg" /><br/>
-
-	<h4>Kitty Cat Katarina</h4>
-	<p>Applicake topping halvah lemon drops wypas cotton candy.</p>
-	<img src="../img/kat_3.jpg" /><br/>
-
-	<h4>High Command Katarina</h4>
-	<p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
-	<img src="../img/kat_4.jpg" /><br/>
-
-	<hr/>
 
 	<div id="rotator">
-		Rotator Here
+        <div class="slide">
+            <img src="../img/kat_1.jpg" />
+            <h4 class="red">Katarina</h4>
+            <p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
+        </div>
+        <div class="slide">
+            <img src="../img/kat_2.jpg" />
+            <h4 class="red">Red Card Katarina</h4>
+            <p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
+        </div>
+        <div class="slide">
+            <img src="../img/kat_3.jpg" />
+            <h4 class="red">Kitty Cat Katarina</h4>
+            <p>Applicake topping halvah lemon drops wypas cotton candy.</p>
+        </div>
+        <div class="slide">
+            <img src="../img/kat_4.jpg" />
+            <h4 class="red">High Command Katarina</h4>
+            <p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
+        </div>
 	</div>
 </div>
 
