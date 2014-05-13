@@ -29,8 +29,10 @@
 
 	<h2>Search</h2>
 	<form onkeydown="executeClick('search-button', event)" >
+        <input type="checkbox" id="match-case" name="case" value="Match Case" />Match Case <br/>
+        <br/>
 		<input type="text" id="search_input" value="llama" />
-		<input id="search-button" type="button" value="Search" onclick="findOccurrences(document.getElementById('search_input').value)" />
+		<input id="search-button" type="button" value="Search"  />
 	</form>
 
 	<h3>Results</h3>
