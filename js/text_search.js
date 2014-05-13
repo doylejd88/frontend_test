@@ -17,11 +17,16 @@ if(window.addEventListener){
  * Initialize the search button to execute our Javascript search.
  */
 function searchInit(){
+    var form = document.getElementById("search-form");
     var button = document.getElementById("search-button");
-    if(button.addEventListener){
+
+    if(form.addEventListener){
         button.addEventListener("click", findOccurrences, false);
-    } else if(button.attachEvent){ //IE < 9
+        form.addEventListener("keydown", executeClick, false);
+
+    } else if(form.attachEvent){ //IE < 9
         button.attachEvent("onclick", findOccurrences);
+        form.attachEvent("onkeydown", executeClick);
     }
 }
 
@@ -76,9 +81,10 @@ function findOccurrences(){
  * @param buttonID - The ID of the button to click.
  * @param e - The event that has been executed (Keyboard button)
  */
-function executeClick(buttonID, e){
+function executeClick(e){
+
     if(e.keyCode == 13){
-        var clicked = document.getElementById(buttonID);
+        var clicked = document.getElementById('search-button');
         if(clicked){
             clicked.click();
             event.preventDefault();
